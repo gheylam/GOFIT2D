@@ -1,0 +1,46 @@
+#+title: GOFIT2D architecture plan
+  
+* Standard usecase sequence
+  1. User opens applcation and arrives at Choose a circuit page 
+     - Just BGM audio
+     - Greyed out START button
+     - A simple catalog of circuits to choose from
+     - Import button for new circuit content
+
+  2. User clicks on an available circuit 
+     - Sample audio of the circuit plays
+     - Difficulty rating shows
+     - Short description of the workout
+     - Start Button is now flashing 
+     - Name of the workout
+     - A list of the exercises that you will be doing 
+       and the seconds of the workout
+
+  3. User clicks on flashing start button 
+     - Enters the game screen intro countdown
+     - First moe image appears
+     - Countdown from 3
+     - Announcer voice "Begin" is spoken at the end of the countdown. 
+
+  4. User follows Game screen - Exercise 
+     - Progress bar appears
+     - Timer clock appears and it counting down as the progress bar 
+       fills up
+     - Name of the exercise at the top of the screen
+     - Notes on the exercise at the top of the screen
+     - Audio of the exercise appears
+
+  5. User rests on Game screen - Rest
+     - Progress bar remains
+     - Timer clock for rest period counts down as progress bar 
+       fills up
+     - Name of next exercise is shown in the top
+     - Cute girl relaxing image is shown
+     - No audio during the rest period.
+
+* Pages 
+  - Choose a circuit page (Not engaged)
+  - Choose a circuit page (engaged)
+  - Game screen - intro
+  - Game screen - Exercise
+  - Game screen - Rest 

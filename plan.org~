@@ -1,0 +1,16 @@
+#+title: GOFIT2D planning
+
+* Objective 
+  This is a application which cycles through exercises providing a set 
+  of visuals indicating the time of exercise that needs to be done as 
+  well as the provision of a timer for action and rest periods. The 
+  application will also play music during the exercises. 
+
+* Extension objectives 
+  1) Adding functionality to keep a track record of the user's 
+     progress and commitment. Perhaps a calendar of some sort?
+
+  2) Users can create their own workout plans 
+
+  3) Implementing the application to connect to the user's 
+     spotify account and access playlists.

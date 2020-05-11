@@ -1,0 +1,10 @@
+/* 
+   Date: 08.05.2020 
+   This is the first PoC for GOFTT2D. 
+   Our aim is to create a simple SDL2 program which will allow us to show a sequence of 
+   images with different audio for each image, as well as an overlaying timer. 
+*/
+
+#include <iostream>
+#include <SDL2/SDL.h>
+#include <string>

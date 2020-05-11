@@ -1,0 +1,123 @@
+#+title: MOEFIT planning
+
+* Project date 
+  08-05-2020
+
+* Objective 
+  This is a application which cycles through exercises providing a set 
+  of visuals indicating the time of exercise that needs to be done as 
+  well as the provision of a timer for action and rest periods. The 
+  application will also play music during the exercises. 
+
+* Extension objectives 
+  1) Adding functionality to keep a track record of the user's 
+     progress and commitment. Perhaps a calendar of some sort?
+
+  2) Users can create their own workout plans 
+
+  3) Implementing the application to connect to the user's 
+     spotify account and access playlists.
+
+  4) Enable people to export workouts on the web and build 
+     a web face to host leaderboards and popular workout
+     exports. 
+
+* Project Technology 
+  - C++
+  - SDL2 Library 
+
+* Project terms 
+  - Reps :: The iteration of a type of exercise
+  - Set :: The number of reps per type of exercise
+  - Circuit :: The sequence of exercises
+  - Session :: Made up of one or more Circuits where each circuit 
+	       can be unique. 
+
+* Project name options 
+  - MOEFIT
+  - GETFIT2D 
+  
+* Detailed project MoSCoW requirements 
+
+** Must 
+   1. A simple configuration script that will be read and 
+      allow users to define exercise
+      - An exercise will be defined as:
+	- Number of reps / or duration of exercise 
+	- The name of the exercise
+	- A cute anime girl picture
+	- An audio track
+	- Notes on reminders of key things about the exericse:
+	  i.e. focus on core, don't hunch back etc.
+   2. A simple configuration script that will enable users 
+      to define circuits from pre-defined exercises 
+   3. A method to add audio to be selected in the configuration
+      file.
+   4. A method to add cute anime girl visuals to be selected 
+      in the configuration file
+   5. To feature a timer when eat set of exercise comes onto 
+      the screen
+   
+** Should 
+   1. The option to choose between the different 
+      pre defined circuits in the application.
+   2. The feature to keep track of user progress and committment.
+   3. The option to preview the circuit without doing the circuit
+      This will then allow people to check if they've scripted 
+      their circuit correctly.
+   4. A exercise and circuit script synxtax checker.
+   5. In-application circuit builder (i.e. you can predefine 
+      the exercises and then build the circuit in the application 
+      with an interface instead of just typing up a circuit 
+      script yourself.
+   6. Ability to export and import circuit/exercise scripts to other 
+      application users.
+   7. Enable users to add there own notes to the exericses 
+      and show them during the exericse's 
+
+** Could 
+   1. Connect with the user's spotify account and enable them to 
+      use their own spotify music instead of just uploading music themself
+      into their local directories.
+   2. Creating a web interface to allow users to share progress/committment 
+      and upload their own exercises and circuit scripts.
+
+
+* Project Logs 
+  
+** DONE 08-05-2020 :: Starting plan and creating PoC
+   CLOSED: [2020-05-09 Sat 23:05]
+   - [X] Create project plan
+   - [X] Build PoC of a single circuit 
+     Create using SDL a series of images with audio that has a timer in front for 
+     each sequence.
+     The purpose of this PoC is to highlight the required code to create the 
+     application which is to:
+     - Show images
+     - Play audio
+     - Show timer
+     - Switch everything to something else when the timer reaches a target.
+
+     *So instead of reaching the end of the timer, instead I have optioned to switch 
+     the context by pushing the enter key.
+     I have and understand how to get the time for the timer now and therefore 
+     getting the context to switch at a certain time will be a trivial task and will
+     be omitted from this PoC.
+
+     As of 09-05-2020 the PoC is finished.
+
+** DONE 11-05-2020 :: Splitting the project
+   CLOSED: [2020-05-11 Mon 23:22]
+   - [X] Plan out from reviewing the prototype what classes am I going to make 
+   - [X] Plan out the architecture of the system
+   - [X] Storyboard the usecase
+
+     The Architecture planning has been recorded in the following file:
+     [[file:./architecture_planning.org][architecture planning]]
+
+     I have now broken up the core components that I need to produce to 
+     build my game. I will start with building the classes which will 
+     be used to bring assets to the game such as text, audio and visuals. 
+     This is a good starting point to split up the game.
+  
+    

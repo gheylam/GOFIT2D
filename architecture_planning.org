@@ -1,0 +1,162 @@
+#+title: GOFIT2D architecture plan
+  
+* Standard usecase sequence
+  1. User opens applcation and arrives at Choose a circuit page 
+     - Just BGM audio
+     - Greyed out START button
+     - A simple catalog of circuits to choose from
+     - Import button for new circuit content
+
+  2. User clicks on an available circuit 
+     - Sample audio of the circuit plays
+     - Difficulty rating shows
+     - Short description of the workout
+     - Start Button is now flashing 
+     - Name of the workout
+     - A list of the exercises that you will be doing 
+       and the seconds of the workout
+
+  3. User clicks on flashing start button 
+     - Enters the game screen intro countdown
+     - First moe image appears
+     - Countdown from 3
+     - Announcer voice "Begin" is spoken at the end of the countdown. 
+
+  4. User follows Game screen - Exercise 
+     - Progress bar appears
+     - Timer clock appears and it counting down as the progress bar 
+       fills up
+     - Name of the exercise at the top of the screen
+     - Notes on the exercise at the top of the screen
+     - Audio of the exercise appears
+
+  5. User rests on Game screen - Rest
+     - Progress bar remains
+     - Timer clock for rest period counts down as progress bar 
+       fills up
+     - Name of next exercise is shown in the top
+     - Cute girl relaxing image is shown
+     - music volume reduces during rest period.
+
+  6. User iterates through Exercise and Rest screens until finished and 
+     arrives at the Game Screen - Finish 
+     - Cute girl picture
+     - Stats screen on the left hand side
+     - Finish button on the bottom
+
+* Pages 
+  - Choose a circuit page (Not engaged)
+  - Choose a circuit page (engaged)
+  - Game screen - intro
+  - Game screen - Exercise
+  - Game screen - Rest
+  - Game screen - Finish 
+
+* Main components of the game 
+  - Intro screen
+  - Game screen
+  - Finish screen
+
+* Game engine 
+  The game engine will be a set of API which allows me to easily
+  program the Game screens. 
+
+  This includes methods to: 
+  - Show text with parameters:
+    - Font
+    - Size
+    - location.x
+    - location.y
+    - text background
+    - text transparency
+
+  - Play audio with parameters:
+    - audio file
+    - play position
+    - play volume 
+     
+
+  - Show image with parameters:
+    - Size of image
+    - location.x
+    - location.y
+    - transpareny of image
+    - colour hue of the image
+    - isButton
+    - Button hitbot parameters 
+
+  - Show progress bar with parameters:
+    - percentage fill of the progress 
+    - location.x
+    - location.y
+    - width of the progress bar
+    - height of the progress bar
+    - transparency of the progress bar
+    
+  - Show timer 
+    - value of the timer
+    - location.x
+    - locaiton.y
+    - radius of the timer
+    - transparency of the timer
+
+* Other pieces of the game 
+  These are pieces of the game which are not vital to
+  the game screens but instead will be needed when creating 
+  other parts of the screen.
+  
+** Text table
+   The text table will be useful for showing a structured 
+   row and column of text. This is a generic game structure
+   which I will be using for the ~circuit list table~ 
+   and also Game screen - Finish ~stats table~
+
+* Game Architecture 
+  
+** Classes I will make 
+   - text class
+   - audio class
+   - image class
+   - progressbar class
+     This class might inherit from the image class 
+   - timer class 
+     This class might inherit from both image class and text class
+   - table class 
+   - game_screen classes 
+     Each of the different types of game screens will 
+     have their own class. They will then get instantiated within the 
+     main loop where they will load their context through the configuration
+     files which will be JSON. The entire list of game_screen classes 
+     will be as follows:
+     - Introuduction 
+       - Context will be the list of circuits available and being able to
+	 load the context of each of the individual circuit when it gets
+	 clicked on
+     - Game screen - Intro 
+       This is the part where image of the circuit shows up and 
+       the displays the 3...2...1... countdown begin sequence 
+       before automatically switching to a new game state.
+     - Game screen - Exercise 
+       This is the part where the iamge, audio and text will be 
+       loaded
+     - Game screen - Rest 
+       The context in this game screen is almost the same as the 
+       Exercise variant, I may consider making this the same class.
+     - Game screen - Finish 
+       The context in this game screen is the stats and the finish
+       button.
+
+*** Game screen API
+    1. Render
+    2. Load context
+    3. Read user input
+    4. Game screen state switch
+     
+   
+
+** Procecure of the main loop 
+   1. Check game state
+   2. Check user input (mouse)
+   3. input user input into current game state
+   4. return a small change in current game state 
+      or move to a new game state.0
