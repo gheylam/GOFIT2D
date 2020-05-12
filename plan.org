@@ -121,3 +121,6 @@
      This is a good starting point to split up the game.
   
     
+** TODO 12-05-2020 :: Creating Image Class
+   - [ ] outline the API of the Image
+   - [ ] Finish the Image Class

@@ -180,8 +180,6 @@ bool loadMedia(){
     printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
     success = false; 
   }
-       
-  
   return success;
 }
 
